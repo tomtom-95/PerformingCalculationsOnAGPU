@@ -1,3 +1,30 @@
+# Compilation, linking and execution
+## Macbook Air, macOS Sonoma 14.1.1
+
+from add.metal to default.metallib
+```
+xcrun -sdk macosx metal -c add.metal -o add.air
+xcrun -sdk macosx metallib add.air -o default.metallib
+```
+hexdump of add.metallib
+```
+xxd -i add.metallib > add_metallib.h
+```
+compile in object-C file
+```
+clang -c -o main.o main.m
+clang -c -o MetalAdder.o MetalAdder.m
+```
+Link all together
+```
+clang -o main -framework Foundation -framework metal -framework CoreGraphics main.o MetalAdder.o
+```
+compile
+```
+./main
+```
+
+
 # Performing Calculations on a GPU
 
 Use Metal to find GPUs and perform calculations on them.
