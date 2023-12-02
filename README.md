@@ -23,7 +23,7 @@ clang -c -o MetalAdder.o MetalAdder.m
 ```
 Link all together
 ```
-clang -o main -framework Foundation -framework metal -framework CoreGraphics main.o MetalAdder.o
+clang -o main -framework Foundation -framework metal -framework CoreGraphics -framework MetalKit main.o MetalAdder.o
 ```
 compile
 ```
