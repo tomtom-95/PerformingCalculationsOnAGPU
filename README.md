@@ -1,6 +1,12 @@
 # Compilation, linking and execution
 ## Macbook Air, macOS Sonoma 14.1.1
 
+Download XCode from the app store (you will not use it but you need the sdk)
+
+Make sure the right path for the sdk is set
+```
+xcode-select -s /Applications/Xcode.app/Contents/Developer
+```
 from add.metal to default.metallib
 ```
 xcrun -sdk macosx metal -c add.metal -o add.air
